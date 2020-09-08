@@ -30,6 +30,32 @@
             <i> Texto en cursiva</i>
             <blockquote> Especie de cita </blockquote>
         </p>
+        <h3>Formulario</h3>
+        <form>
+            <p>           
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Escribe tu nombre" />
+            </p>
+            <p>
+                <label for="descripcion"></label>
+                <textarea name="descripcion"></textarea>
+            </p>
+            <p>
+                <input type="radio" name="genero" value="Hombre"> Hombre <br/>
+                <input type="radio" name="genero" value="Mujer"> Mujer <br/>
+                <input type="radio" name="genero" value="Nada"> Nada <br/>
+
+                <select name="generodos">
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="nada">Nada</option>
+                </select>
+
+                <input type="submit" value="Enviar formulario">
+            </p>
+            
+        </form>
+
         <h3>Listado de frutas</h3>
             <ol>
                 <li>Manzana</li>
@@ -64,8 +90,8 @@
                 <tr>
                     <td>Miguel</td> <!-- Columna-->
                     <td colspan="2">Jimenez</td>
-
                 </tr><!-- Fila-->
             </table>
+
     </body>
 </html>
