@@ -11,7 +11,16 @@
 */
 $numero = 100;
 $decimal = 27.90;
-$tecto = "Soy texto";
+$texto = "Soy texto \" $numero"; //comilla doble es mas lento a nivel de procesamiento
+//$texto = 'Soy texto'. $numero; 
+
 $verdadero = true;
-$nula;
+$nula = null;
 echo gettype($nula);
+echo $texto;
+//  Debugear
+echo '<br/>';
+$mi_nombre[] = "Miguel Angel";
+$mi_nombre[] = "Miguel Angel";
+
+var_dump($mi_nombre);
