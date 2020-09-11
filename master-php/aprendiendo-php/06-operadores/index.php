@@ -20,5 +20,15 @@ $year--;
 // pre-decremento   $year = 1 - $year;
 --$year;
 //pre-incremento $year = 1 + $year;
+++$year;
 echo "<h1>$year</h1>";
-?>
+
+//  Operadores de asignación
+$edad = 55;
+echo $edad.'<br>';
+
+//  $edad = $edad + 5;
+echo ($edad+=5);
+echo ($edad-=5);
+echo ($edad*=5);
+echo ($edad/=5);
