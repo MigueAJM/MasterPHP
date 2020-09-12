@@ -17,7 +17,12 @@
  *  > mayor que
  *  <= menor y igual que
  *  >= Mayor igual que
-*/
+ * 
+ *  OPERADORES LOGICOS
+ *  && AND Y
+ *  ||  OR  O
+ *  ! NOT NO
+ */
 //  Ejemplo 1
 $color = "rojo";
 if($color == 'rojo'){
@@ -39,7 +44,7 @@ if($year != 2020){
 echo '<br>';
 
 $nombre = "Miguel";
-$ciudad = 'Mexico';
+$ciudad = 'C. Mexico';
 $continete = 'America';
 $edad = 23;
 $mayoria_edad = 18;
@@ -55,7 +60,7 @@ if($edad >= $mayoria_edad){
 }else{
     echo '<h2>'.$nombre.' no es mayor de edad</h2>';
 }
-
+echo '<br>';
 //  Ejemplo 4
 $dia = 3;
 if($dia == 1){
@@ -68,4 +73,21 @@ if($dia == 1){
     echo 'Es Viernes';
 }else{
     echo 'Es fin de semana';
+}
+echo '<br>';
+//  Ejemplo 5
+$edad1 = 18;
+$edad2 = 64;
+$edad_oficial = 20;
+if($edad_oficial >= $edad1 && $edad_oficial <= $edad2){
+    echo 'Esta en edad de trabajar';
+}else{
+    echo 'No puede trabahar';
+}
+
+$pais = 'Mexico';
+if($pais == 'Mexico' || $pais == 'España' || $pais == 'Colombia'){
+    echo 'En este pais se habla español';
+}else{
+    echo 'En este pais no se habla español';
 }
