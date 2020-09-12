@@ -47,11 +47,25 @@ $mayoria_edad = 18;
 if($edad >= $mayoria_edad){
     echo '<h1>'.$nombre.' es mayor de edad</h1>';
 
-    if($continete == 'America'){
+    if($continete == 'America'){ // esto es un if anidado
         echo '<h2>Es de '.$ciudad.'</h2>';
     }else{
         echo 'No es de '.$continete;
     }
 }else{
     echo '<h2>'.$nombre.' no es mayor de edad</h2>';
+}
+
+//  Ejemplo 4
+$dia = 3;
+if($dia == 1){
+    echo 'Es Lunes';
+}elseif($dia == 2){
+    echo 'Es Martes';
+}elseif($dia == 3){
+    echo "Es Miercoles";
+}elseif($dia == 5){
+    echo 'Es Viernes';
+}else{
+    echo 'Es fin de semana';
 }
