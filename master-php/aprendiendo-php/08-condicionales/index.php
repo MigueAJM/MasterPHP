@@ -1,5 +1,7 @@
 <?php
 /*
+ *      ESTRUCTURAS DE CONTROL
+ * 
  *  CONDICIONALES
  *  IF:
  * if(condicion){
@@ -113,3 +115,13 @@ if($pais == 'Mexico' || $pais == 'España' || $pais == 'Colombia'){
 }else{
     echo 'En este pais no se habla español';
 } 
+
+//  GOTO
+goto marca;
+echo '<h3>Instruccion 1</h3>';
+echo '<h3>Instruccion 2</h3>';
+echo '<h3>Instruccion 3</h3>';
+echo '<h3>Instruccion 4</h3>';
+
+marca:
+echo '<h1>Me he saltado 4 echo</h1>';
