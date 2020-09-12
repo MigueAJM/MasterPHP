@@ -74,6 +74,28 @@ if($dia == 1){
 }else{
     echo 'Es fin de semana';
 }
+echo '<hr>';
+$dia = 4;
+
+switch($dia){
+    case 1:
+        echo 'LUNES';
+        break;
+    case 2:
+        echo 'MARTES';
+        break;
+    case 3:
+        echo 'MIERCOLES';
+        break;
+    case 4:
+        echo 'JUEVES';
+        break;
+    case 5:
+        echo 'VIERNES';
+        break;
+    default:
+        echo 'ES FIN DE SEMANA';    
+}
 echo '<br>';
 //  Ejemplo 5
 $edad1 = 18;
@@ -84,10 +106,10 @@ if($edad_oficial >= $edad1 && $edad_oficial <= $edad2){
 }else{
     echo 'No puede trabahar';
 }
-
+echo '<br>';
 $pais = 'Mexico';
 if($pais == 'Mexico' || $pais == 'España' || $pais == 'Colombia'){
     echo 'En este pais se habla español';
 }else{
     echo 'En este pais no se habla español';
-}
+} 
