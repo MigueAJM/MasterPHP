@@ -2,6 +2,8 @@
 /*
 *   Ejercicio 5.    Hacer un script que muestre todos los numeros entre dos numeros
 *   que nos lleguen por la URL($_GET)
+*
+*   NOTA => isset — Determine if a variable is declared and is different than NULL
 */
 if(isset($_GET['numero1']) && isset($_GET['numero2'])){
     $numero1 = $_GET['numero1'];
