@@ -32,5 +32,9 @@ var_dump($numero);
 echo '<h1>Tabla de multiplicar del numero'.$numero.'</h1>';
 
 for($contador = 1; $contador <= 10; $contador++){
+    if($numero == 45){
+        echo 'No se puede mostrar estas opereaciones';
+        break;  //  nos permite salirnos de la ejecuciòn de un bucle
+    }
     echo "$numero x $contador = ".($numero*$contador).'<br>';
 }
