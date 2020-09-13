@@ -44,3 +44,18 @@ while($contador <= 10){
     echo "$numero x $contador = ".($numero*$contador).'<br>';
     $contador++;
 }
+
+//  DO WHILE    =>  condiciòn se evalua al final, lo cual solo se ejecutara por lo menos una vez
+/*
+*    do{
+*            //  bloque de instrucciones 
+*    }while(condicion);
+*/
+echo '<hr>';
+$edad = 17;
+$contador = 1;
+
+do{
+    echo 'Tienes acceso al local privado '.$contador.'<br>';
+    $contador++; 
+}while($edad >= 18 && $contador <= 10);
