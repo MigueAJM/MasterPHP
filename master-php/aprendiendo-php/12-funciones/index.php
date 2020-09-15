@@ -25,7 +25,7 @@ muestraNombres();
 *   muestraNombres();
 *   muestraNombres();
 */
-
+/*
 //  Ejemplo 2.
 function tabla($numero){
     echo '<h3>Tabla de multiplicar del numero '.$numero.'</h3>';
@@ -47,4 +47,20 @@ if(isset($_GET['numero'])){
 for($i = 0; $i <= 10; $i++){
     tabla($i);
 }
+*/
+//  Ejemplo 3.
 
+function calculadora($numero1, $numero2){
+    $suma = $numero1+$numero2;
+    $resta = $numero1-$numero2;
+    $multi = $numero1*$numero2;
+    $division = $numero1/$numero2;
+
+    echo 'Suma: '.$suma.'<br>';
+    echo 'Resta: '.$resta.'<br>';
+    echo 'Multiplicacion: '.$multi.'<br>';
+    echo 'Division: '.$division.'<br>';
+    echo '<hr>';
+}
+
+calculadora(10,34);
