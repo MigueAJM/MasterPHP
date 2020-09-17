@@ -71,3 +71,4 @@ function calculadora($numero1, $numero2, $negrita = false){
 
 calculadora(10,34);
 calculadora(2,5,true);  // el terer parametro puede ser opcional, debido a que se le asigna un valor por defecto.
+/*  NOTA: Los ecos en las funciones no son una buena practica, las funciones deben retornar algun valor. */
