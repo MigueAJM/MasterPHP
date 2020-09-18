@@ -55,20 +55,30 @@ function calculadora($numero1, $numero2, $negrita = false){
     $resta = $numero1-$numero2;
     $multi = $numero1*$numero2;
     $division = $numero1/$numero2;
+    $cadenaTexto = '';
 
     if($negrita){
-        echo '<h1>';
+        $cadenaTexto .= '<h1>';
     }
-    echo 'Suma: '.$suma.'<br>';
-    echo 'Resta: '.$resta.'<br>';
-    echo 'Multiplicacion: '.$multi.'<br>';
-    echo 'Division: '.$division.'<br>';
-    echo '<hr>';
+    $cadenaTexto .= 'Suma: '.$suma.'<br>';
+    $cadenaTexto .= 'Resta: '.$resta.'<br>';
+    $cadenaTexto .= 'Multiplicacion: '.$multi.'<br>';
+    $cadenaTexto .= 'Division: '.$division.'<br>';
+    $cadenaTexto .=  '<hr>';
     if($negrita){
-        echo '</h1>';
+        $cadenaTexto .=  '</h1>';
     }
+    $cadenaTexto .= '<hr>';
+    //var_dump($cadenaTexto);
+    return $cadenaTexto;
 }
 
 calculadora(10,34);
-calculadora(2,5,true);  // el terer parametro puede ser opcional, debido a que se le asigna un valor por defecto.
+echo calculadora(2,5,true);  // el terer parametro puede ser opcional, debido a que se le asigna un valor por defecto.
+
+function devuelveELNombre($nombre){
+    return 'El nombre es: '.$nombre;
+}
+
+echo devuelveELNombre('Miguel');
 /*  NOTA: Los ecos en las funciones no son una buena practica, las funciones deben retornar algun valor. */
