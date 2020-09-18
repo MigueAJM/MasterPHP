@@ -26,3 +26,23 @@ function holaMundo(){
 
 echo $year; //  Solo esta dentro del ambito de la función, la unica forma de usar la variable, con un return, aqui retorna UNDEFINED
 echo holaMundo();
+echo '<hr>';
+
+//  FUNCIONES VARIABLES
+function buenosDias(){
+    return '<h1>Hola! Buenos dias :)</h1>';
+}
+function buenasTardes(){
+    return '<h1>Hey! que tal te ha ido la comida?</h1>';
+}
+function buenasNoches(){
+    return '<h1>¿Te vas a dormir ya? Buenas noches</h1>';
+}
+
+$horario = 'buenasNoches';
+
+echo $horario();
+
+$horario = $_GET['horario'];
+$mifunction = 'buenas'.$horario;
+echo $mifunction();
