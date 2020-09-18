@@ -68,7 +68,6 @@ function calculadora($numero1, $numero2, $negrita = false){
     if($negrita){
         $cadenaTexto .=  '</h1>';
     }
-    $cadenaTexto .= '<hr>';
     //var_dump($cadenaTexto);
     return $cadenaTexto;
 }
@@ -76,9 +75,26 @@ function calculadora($numero1, $numero2, $negrita = false){
 calculadora(10,34);
 echo calculadora(2,5,true);  // el terer parametro puede ser opcional, debido a que se le asigna un valor por defecto.
 
-function devuelveELNombre($nombre){
-    return 'El nombre es: '.$nombre;
+//  Ejemplo 4
+function getNombre($nombre){
+    $texto = 'El nombre es: '.$nombre;
+    return $texto;
 }
 
-echo devuelveELNombre('Miguel');
-/*  NOTA: Los ecos en las funciones no son una buena practica, las funciones deben retornar algun valor. */
+function getApellido($apellido){
+    $texto = 'Los apellidos son: '.$apellido;
+    return $texto;
+}
+
+function devuelveELNombre($nombre, $apellido){
+    $texto = getNombre($nombre)
+            .'<br>'.
+            getApellido($apellido);
+    return $texto;
+            
+}
+
+echo devuelveELNombre('Miguel', 'Jimenez');
+/*  NOTA: Los ecos en las funciones no son una buena practica, las funciones deben retornar algun valor. 
+    *   Cuando las funciones seran demasiado grandes, es recomendable separarla en funciones mas pequeñas.
+*/
