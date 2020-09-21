@@ -15,5 +15,21 @@
     var_dump($cantantes);
     echo '<hr>';
     echo $peliculas[0].'<br>';
-    echo $cantantes[2];
+    echo $cantantes[2].'<hr>';
+
+//  Recorrer con FOR
+echo '<h2>Listado de peliculas</h2>';
+echo '<ul>';
+for($i = 0; $i < count($peliculas); $i++){
+    echo '<li>'.$peliculas[$i].'</li>';
+}
+echo '</ul>';
+
+//  Recorrer con FOREACH
+echo '<h2>Listado de cantantes</h2>';
+echo '<ul>';
+foreach ($cantantes as $cantante) {
+    echo '<li>'.$cantante.'</li>';
+}
+echo '</ul>';
 ?>
