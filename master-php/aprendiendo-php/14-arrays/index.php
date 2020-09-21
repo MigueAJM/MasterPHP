@@ -8,6 +8,19 @@
     $pelicula = "Batman";
     $peliculas = array('Batman', 'Spiderman', 'Superman');
     $cantantes = ['Drake Bell', 'Kurt', 'Drake'];
+//  ARRAY ASOCIATIVO
+    //  indices alfanumericos => Array asociativo
+    $personas = array(
+        'nombre' => 'Miguel',
+        'apellidos' => 'Jimenez',
+        'web' => 'victorroblesweb.es'
+    );
+    var_dump($personas);
+    echo '<hr>';
+    var_dump($personas['apellidos']);
+    echo '<hr>';
+
+
     var_dump($peliculas);
     echo '<br>';
     var_dump($peliculas[2]);
