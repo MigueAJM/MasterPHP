@@ -61,6 +61,13 @@
 
             <label for="web">Pagina web:</label>
             <p><input type="url" name="web"/></p>
+
+            <textarea></textarea><br/>
+            Peliculas:
+            <select name="peliculas">
+                <option value="spiderman">spiderman</option>
+                <option value="Superman">superman</option>
+            </select>
         </form>
     </body>
 </html>
