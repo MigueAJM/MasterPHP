@@ -1,4 +1,5 @@
 <?php
+/*
 //  Abrir archivo
 $archivo = fopen('fichero_texto.txt', 'a+'); // a+: Leer y escribir
 
@@ -13,3 +14,12 @@ fwrite($archivo, 'texto introducido desde PHP');
 
 //  Cerrar archivo
 fclose($archivo);
+*/
+//  Copiar fichero
+//  copy('fichero_texto.txt', 'fichero_copiado.txt') or die('error al copiar');
+
+//  Renombrar
+//rename('fichero_copiado.txt', 'archivo_rename.txt');
+
+//  Eliminar 
+unlink('archivo_rename.txt') or die('Error al borrar');
