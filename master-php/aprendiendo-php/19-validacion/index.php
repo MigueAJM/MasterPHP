@@ -7,22 +7,44 @@
 </head>
 <body>
     <h1>Validar formularios en PHP</h1>
-
+    <?php
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+            if($error == 'faltan_datos'){
+                echo '<strong style="color:red">Introduce todos los campos del formulario</strong>';
+            }
+            if($error == 'nombre'){
+                echo '<strong style="color:red">Introduce bien el nombre</strong>';
+            }
+            if($error == 'apellidos'){
+                echo '<strong style="color:red">Introduce bien los apellidos</strong>';
+            }
+            if($error == 'edad'){
+                echo '<strong style="color:red">La edad no es valida</strong>';
+            }
+            if($error == 'email'){
+                echo '<strong style="color:red">El email es incorrecto</strong>';
+            }
+            if($error == 'Password'){
+                echo '<strong style="color:red">Introduce una contraseña de mas de 5 caracteres</strong>';
+            }
+        }
+    ?>
     <form action="procesar_formulario.php" method="POST">
         <label for="nombre">Nombre: </label><br/>
-        <input type="text" name="nombre" required="required" pattern="[A-Za-z]+"/><br/>
+        <input type="text" name="nombre" /><br/>
 
         <label for="apellidos">Apellidos: </label><br/>
-        <input type="text" name="apellidos" required="required" pattern="[A-Za-z]+"/><br/>
+        <input type="text" name="apellidos" /><br/>
 
         <label for="edad">Edad: </label><br/>
-        <input type="number" name="edad" required="required" pattern="[0-9]+"/><br/>
+        <input type="number" name="edad" /><br/>
 
         <label for="email">Email: </label><br/>
-        <input type="email" name="email" required="required"/><br/>
+        <input type="text" name="email" /><br/>
 
         <label for="pass">Contraseña: </label><br/>
-        <input type="password" name="pass" required="required"/><br/>
+        <input type="password" name="pass" /><br/>
 
         <input type="submit" value="Enviar"/>
     </form>
