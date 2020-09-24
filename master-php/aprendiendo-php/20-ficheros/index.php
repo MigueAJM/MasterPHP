@@ -22,4 +22,10 @@ fclose($archivo);
 //rename('fichero_copiado.txt', 'archivo_rename.txt');
 
 //  Eliminar 
-unlink('archivo_rename.txt') or die('Error al borrar');
+//unlink('archivo_rename.txt') or die('Error al borrar');
+
+if(file_exists('fichero_texto.txt')){
+    echo 'El archivo existe';
+}else{
+    echo 'No existe';
+}
