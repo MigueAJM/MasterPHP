@@ -32,19 +32,19 @@
     ?>
     <form action="procesar_formulario.php" method="POST">
         <label for="nombre">Nombre: </label><br/>
-        <input type="text" name="nombre" /><br/>
+        <input type="text" name="nombre" required="required" pattern="[a-zA-Z ]+"/><br/>
 
         <label for="apellidos">Apellidos: </label><br/>
-        <input type="text" name="apellidos" /><br/>
+        <input type="text" name="apellidos" required="required" pattern="[a-zA-Z ]+"/><br/>
 
         <label for="edad">Edad: </label><br/>
-        <input type="number" name="edad" /><br/>
-
+        <input type="number" name="edad" required="required" pattern="[0-9]+"/><br/>
+       
         <label for="email">Email: </label><br/>
-        <input type="text" name="email" /><br/>
+        <input type="text" name="email" required="required"/><br/>
 
         <label for="pass">Contraseña: </label><br/>
-        <input type="password" name="pass" /><br/>
+        <input type="password" name="pass" required="required" minlength="5"/><br/>
 
         <input type="submit" value="Enviar"/>
     </form>
