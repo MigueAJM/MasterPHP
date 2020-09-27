@@ -1,0 +1,6 @@
+STATUS;
+SHOW DATABASES;
+CREATE DATABASE blog_master;
+SHOW TABLES;
+DROP DATABASE blog_master;
+USE blog_master;
