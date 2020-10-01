@@ -26,5 +26,10 @@ CREATE TABLE usuarios(
     email          VARCHAR(100),
     password       VARCHAR(255)
 );
-show tables;
-desc usuarios;      /* Describe la tabla indicada */
+SHOW tables;
+DESC usuarios;      /* Describe la tabla indicada */
+
+/*
+  Eliminar tablas  
+*/
+DROP TABLE usuarios;
