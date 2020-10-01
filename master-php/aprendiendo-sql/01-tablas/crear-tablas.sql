@@ -17,7 +17,7 @@
 */
 
 /*
-    CREAR TABLAS
+      CREAR TABLAS
 */
 CREATE TABLE usuarios(
     id             INT(11),
@@ -28,7 +28,7 @@ CREATE TABLE usuarios(
 );
 SHOW tables;
 DESC usuarios;      /* Describe la tabla indicada */
-
+ 
 /*
   Eliminar tablas  
 */
