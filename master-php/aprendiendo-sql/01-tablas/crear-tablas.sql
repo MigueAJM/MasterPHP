@@ -20,11 +20,12 @@
       CREAR TABLAS
 */
 CREATE TABLE usuarios(
-    id             INT(11),
-    nombre         VARCHAR(100),
-    apellidos      VARCHAR(255),
-    email          VARCHAR(100),
-    password       VARCHAR(255)
+    id             INT(11) AUTO_INCREMENT NOT NULL,
+    nombre         VARCHAR(100) NOT NULL,
+    apellidos      VARCHAR(255) DEFAULT  'HOLA QUE TAL',
+    email          VARCHAR(100) NOT NULL,
+    password       VARCHAR(255),
+    CONSTRAINT pk_usuarios PRIMARY KEY(id)
 );
 SHOW tables;
 DESC usuarios;      /* Describe la tabla indicada */
