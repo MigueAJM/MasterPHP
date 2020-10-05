@@ -1,0 +1,14 @@
+Lenguaje de manipulación de datos DML(Data Manipulation Language)
+
+Un lenguaje de manipulación de datos (Data Manipulation Language, 
+o DML en inglés) es un lenguaje proporcionado por el sistema de 
+gestión de base de datos que permite a los usuarios llevar a cabo 
+las tareas de consulta o manipulación de los datos, organizados por 
+el modelo de datos adecuado.
+
+El lenguaje de manipulación de datos más popular hoy día es SQL.
+
+-   SELECT
+-   INSERT
+-   UPDATE
+-   DELETE
