@@ -28,3 +28,13 @@ CREATE TABLE entradas(
 )ENGINE=InnoDb;
 
 -- MyISAM es mas rapido a la hora de hacer consultas select, pero no mantiene  la integridad referencial
+
+/*
+    CASCADE
+*/
+
+ --   CONSTRAINT fk_entrada_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON DELETE CASCADE     => se borraran los registros relacionasdos conla categoria
+ --   CONSTRAINT fk_entrada_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON UPDATE CASCADE   => actualización en cascada
+ --   CONSTRAINT fk_entrada_categoria FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON DELETE SET NULL o DEFAULT o NO ACTION
+
+
