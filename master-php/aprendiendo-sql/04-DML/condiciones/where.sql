@@ -44,3 +44,12 @@ SELECT * FROM usuarios WHERE (YEAR(fecha)%2 = 0);
 -- 5.- MOSTRAR TODOS LOS REGISTROS DE LA TABLA USUARIOS CUYO NOMBRE TENGA MAS DE 5 LETRAS Y QUE ADEMAS SE
 --      HAYAN REGISTRADO DESPUES DEL 2020, MOSTRAR EL NOMBRE EN MAYUSCULAS
 SELECT UPPER(nombre)AS 'Nombre', apellidos FROM usuarios WHERE LENGTH(nombre) > 5 AND YEAR(fecha)> 2020;
+
+/*
+clausalas
+OEDER BY Y LIMIT
+*/
+SELECT * FROM usuarios ORDER BY fecha DESC;
+SELECT * FROM usuarios ORDER BY nombre; -- order by me ordena de acuerdo a la columna que especificque
+SELECT *  FROM usuarios LIMIT 1; -- limit me retorna solamente n cantidad de registros
+SELECT * FROM usuarios LIMIT 2,1; -- al añadirle un parametro mas  toma el primero como el comienzo, y el segundo como el numero de registros a mostrar
