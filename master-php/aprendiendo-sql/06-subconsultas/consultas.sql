@@ -21,10 +21,11 @@ SELECT nombre, apellidos FROM usuarios WHERE id
     IN(SELECT usuario_id  FROM entradas WHERE titulo LIKE '%GTA%');
 
 -- SACAR TODAS LAS ENTRADAS DE LA CATEGORIA ACCION UTILIANDO SU NOMBRE
-SELECT  categoria_id, stitulo FROM entradas WHERE categoria_id
+SELECT  categoria_id, titulo FROM entradas WHERE categoria_id
     IN(SELECT id FROM categorias WHERE nombre = 'Acción');
--- MOSTRAR LAS CAREGORIAS CON MAS DE 3 ENTRADAS
-
+-- MOSTRAR LAS CAREGORIAS CON MAS DE 3  O MÁS  ENTRADAS
+SELECT nombre FROM categorias WHERE
+    id IN (SELECT categoria_id FROM entradas GROUP BY categoria_id HAVING COUNT(categoria_id)>=3);
 -- MOSTRAR LOS USUARIOS QUE CREARON UNA ENTRADA UN  MIERCOLES
 
 -- MOSTRAR EL NOMBRE DEL USUARIO QUE TENGA MAS ENTRADAS
