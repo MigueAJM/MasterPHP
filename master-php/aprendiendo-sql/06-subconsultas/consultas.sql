@@ -5,7 +5,7 @@
     operar en l consulta principal
 
 */
-
+-- SACAR USUARIOS CON ENTRADAS
 SELECT * FROM usuarios WHERE id IN(SELECT usuario_id FROM entradas);
 
 /*
@@ -15,3 +15,7 @@ SELECT * FROM usuarios WHERE id IN(SELECT usuario_id FROM entradas);
     en caso de que solo nos retorne un valor se utilizara el igual" = "
 */
 SELECT * FROM usuarios WHERE id NOT IN(SELECT usuario_id FROM entradas);
+
+-- SACAR  LOS USUARIOS QUE TENGAN UNA ENTRADA QUE EN SUS TITULOS HABLEN DE GTA
+SELECT nombre, apellidos FROM usuarios WHERE id 
+    IN(SELECT usuario_id  FROM entradas WHERE titulo LIKE '%GTA%');
