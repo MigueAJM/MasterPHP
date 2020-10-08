@@ -27,7 +27,8 @@ SELECT  categoria_id, titulo FROM entradas WHERE categoria_id
 SELECT nombre FROM categorias WHERE
     id IN (SELECT categoria_id FROM entradas GROUP BY categoria_id HAVING COUNT(categoria_id)>=3);
 -- MOSTRAR LOS USUARIOS QUE CREARON UNA ENTRADA UN  MIERCOLES
-
+SELECT * FROM usuarios WHERE id IN
+    (SELECT usuario_id FROM entradas WHERE DAYOFWEEK(fecha)=4);
 -- MOSTRAR EL NOMBRE DEL USUARIO QUE TENGA MAS ENTRADAS
 
 -- MOSTRAR LAS CATEGORIAS SIN ENTRADAS
