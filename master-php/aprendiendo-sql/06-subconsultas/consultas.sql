@@ -33,3 +33,5 @@ SELECT * FROM usuarios WHERE id IN
 SELECT nombre FROM usuarios WHERE id =
     (SELECT usuario_id FROM entradas GROUP BY  usuario_id ORDER BY COUNT(id) DESC LIMIT 1);
 -- MOSTRAR LAS CATEGORIAS SIN ENTRADAS
+SELECT * FROM categorias WHERE id NOT IN
+    (SELECT categoria_id FROM entradas);
