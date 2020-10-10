@@ -16,7 +16,7 @@ WHERE e.usuario_id = u.id GROUP BY e.usuario_id;
 
 
 /*
-INNER JOIN 
+INNER JOIN: 
 El INNER JOIN se diferencia de todas las demás sentencias de JOIN por mostrar 
 un conjunto de resultados mínimos, pues solo se muestran los registros de datos 
 del producto cruzado que cumplen la condición de selección. Todo ello se presenta 
@@ -28,9 +28,16 @@ INNER JOIN usuarios u ON e.usuario_id = u.id
 INNER JOIN categorias c  ON e.categoria_id = c.id; 
 
 /*
-LEFT JOIN 
+LEFT JOIN: 
 ME ANTIENE TODO LO DE LA TABLA DE LA IZQUIERDA Y LO QUE HAY A LA DERECHA SOLAMENTE SE VA A MOSTRAR
 EN EL CASO QUE HAYA UNA COINCIDENCIA EN LA TABLA DE LA IZQUIERDA.
 */
 SELECT c.nombre, COUNT(e.id) FROM categorias c
 LEFT JOIN entradas e ON e.categoria_id = c.id GROUP BY e.categoria_id;
+
+/*
+RIGHT JOIN: 
+EXACTAMENTE AL LEFT JOIN, PERO ACTUANDO A LA DERECHA
+*/
+SELECT c.nombre, COUNT(e.id) FROM categorias c
+RIGHT JOIN entradas e ON e.categoria_id = c.id GROUP BY e.categoria_id;
