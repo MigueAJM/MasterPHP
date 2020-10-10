@@ -26,3 +26,11 @@ SELECT e.titulo, u.nombre AS 'Autor', c.nombre AS 'Categoria'
 FROM entradas e
 INNER JOIN usuarios u ON e.usuario_id = u.id
 INNER JOIN categorias c  ON e.categoria_id = c.id; 
+
+/*
+LEFT JOIN 
+ME ANTIENE TODO LO DE LA TABLA DE LA IZQUIERDA Y LO QUE HAY A LA DERECHA SOLAMENTE SE VA A MOSTRAR
+EN EL CASO QUE HAYA UNA COINCIDENCIA EN LA TABLA DE LA IZQUIERDA.
+*/
+SELECT c.nombre, COUNT(e.id) FROM categorias c
+LEFT JOIN entradas e ON e.categoria_id = c.id GROUP BY e.categoria_id;
