@@ -57,3 +57,52 @@ CONSTRAINT pk_encargos PRIMARY KEY(id),
 CONSTRAINT fk_encargo_cliente FOREIGN KEY(cliente_id) REFERENCES clientes(id),
 CONSTRAINT fk_encargo_coche FOREIGN KEY(coche_id) REFERENCES coches(id)
 )ENGINE=InnoDB;
+
+-- COCHES
+INSERT INTO  coches VALUES(null, 'Renault Clio', 'Renault', 12000, 13);
+INSERT INTO  coches VALUES(null, 'Mercedes Ranchera', 'Mercedes Benz', 32000, 24);
+INSERT INTO  coches VALUES(null, 'Porche Cayene', 'Porche', 62000, 5);
+INSERT INTO  coches VALUES(null, 'Lambo Aventador', 'Lamborgini', 170000, 2);
+INSERT INTO  coches VALUES(null, 'Ferrari Spider', 'Ferrari', 245000, 80);
+INSERT INTO  coches VALUES(null, 'Saet Panda', 'Seat', 10000, 10);
+
+-- GRUPOS
+INSERT INTO grupos VALUES(null, 'vendedores A', 'Madrid');
+INSERT INTO grupos VALUES(null, 'vendedores B', 'Madrid');
+INSERT INTO grupos VALUES(null, 'Directores Mecanicos', 'Madrid');
+INSERT INTO grupos VALUES(null, 'vendedores A', 'Barcelona');
+INSERT INTO grupos VALUES(null, 'vendedores B', 'Barcelona');
+INSERT INTO grupos VALUES(null, 'vendedores C', 'Valencia');
+INSERT INTO grupos VALUES(null, 'vendedores A', 'Bilbao');
+INSERT INTO grupos VALUES(null, 'vendedores B', 'Pamplona');
+INSERT INTO grupos VALUES(null, 'vendedores C', 'Santiago de Compostela');
+
+-- VENDEDORES
+INSERT INTO  vendedores VALUES(null, 1, null, 'David', 'Lopez', 'Responsable de tienda', CURDATE(), 30000, 4);
+INSERT INTO vendedores VALUES(NULL, 1, 1, 'Fran', 'Martinez', 'Ayudante en la tienda', CURDATE(), 23000, 2);
+INSERT INTO vendedores VALUES(NULL, 2, NULL, 'Nelson', 'Sanchez', 'Responsable de tienda', CURDATE(), 38000, 5);
+INSERT INTO vendedores VALUES(NULL, 2, 3, 'Jesus', 'Lopez', 'Ayudante en la tienda', CURDATE(), 12000, 6);
+INSERT INTO vendedores VALUES(NULL, 3, NULL, 'Victor', 'Lopez', 'Mecanico Jefe', CURDATE(), 50000, 2);
+INSERT INTO vendedores VALUES(NULL, 4, NULL, 'Antonio', 'Lopez', 'Vendedor de recambios', CURDATE(), 13000, 8);
+INSERT INTO vendedores VALUES(NULL, 5, NULL, 'Salvador', 'Lopez', 'Vendedor experto', CURDATE(), 60000, 2);
+INSERT INTO vendedores VALUES(NULL, 6, NULL, 'Joaquin', 'Lopez', 'Ejecutivo de cuentas', CURDATE(), 80000, 1);
+INSERT INTO vendedores VALUES(NULL, 6, NULL, 'Luis', 'Lopez', 'Ayudante en la tienda', CURDATE(), 10000, 10);
+
+-- CLIENTES 
+INSERT INTO clientes VALUES(NULL, 1, 'Construcciones Diaz Inc', 'Alcobendas', 24000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Fruteria Antonia Inc', 'Fuenlabrada', 40000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Imprenta Martinez Inc', 'Barcelona', 32000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Jesus colchones Inc', 'El Prat', 96000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Bar Pepe Inc', 'Valencia', 170000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Tienda PC Inc', 'Murcia', 245000, CURDATE());
+
+-- ENCARGOS
+INSERT INTO encargos VALUES(NULL, 1, 1, 2, CURDATE());
+INSERT INTO encargos VALUES(NULL, 2, 2, 4, CURDATE());
+INSERT INTO encargos VALUES(NULL, 3, 3, 1, CURDATE());
+INSERT INTO encargos VALUES(NULL, 4, 3, 3, CURDATE());
+INSERT INTO encargos VALUES(NULL, 5, 5, 1, CURDATE());
+INSERT INTO encargos VALUES(NULL, 6, 6, 1, CURDATE());
+
+--  conculta multitabla
+SELECT cantidad, nombre, modelo FROM encargos, clientes, coches WHERE encargos.cliente_id = clientes.id AND encargos.coche_id = coches.id;
