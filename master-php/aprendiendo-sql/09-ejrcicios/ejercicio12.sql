@@ -1,0 +1,4 @@
+/*
+CONSEGUIR LA MASA SALARIAL DEL CONCESIONARIO (ANUAL)
+*/
+SELECT SUM(sueldo) AS 'Masa salarial' FROM vendedores;
