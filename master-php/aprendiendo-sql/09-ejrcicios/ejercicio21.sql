@@ -1,0 +1,6 @@
+/*
+OBTENER LOS NOMBRES YCIUDADES DE LOS CLIENTES CON ENCARGOS DE 3 
+UNIDADES EN ADELANTE
+*/
+SELECT nombre, ciudad FROM clientes WHERE id IN
+    (SELECT cliente_id FROM encargos WHERE cantidad >= 3);
