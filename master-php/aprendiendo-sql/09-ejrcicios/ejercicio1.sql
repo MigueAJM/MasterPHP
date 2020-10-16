@@ -95,6 +95,8 @@ INSERT INTO clientes VALUES(NULL, 1, 'Imprenta Martinez Inc', 'Barcelona', 32000
 INSERT INTO clientes VALUES(NULL, 1, 'Jesus colchones Inc', 'El Prat', 96000, CURDATE());
 INSERT INTO clientes VALUES(NULL, 1, 'Bar Pepe Inc', 'Valencia', 170000, CURDATE());
 INSERT INTO clientes VALUES(NULL, 1, 'Tienda PC Inc', 'Murcia', 245000, CURDATE());
+INSERT INTO clientes VALUES(NULL, 1, 'Tienda Organica Inc', 'Murcia', 245000, CURDATE());
+
 
 -- ENCARGOS
 INSERT INTO encargos VALUES(NULL, 1, 1, 2, CURDATE());
