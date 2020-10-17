@@ -26,3 +26,14 @@ while($nota = mysqli_fetch_assoc($query)){
     echo '<h3>'.$nota['titulo'].'</h3>';
     echo $nota['descripcion'].'<br/>';
 }
+echo '<hr/>';
+//  INSERTAR EN LA BASE DE DATOS DESDE PHP
+$sql = "INSERT INTO notas VALUES(NULL, 'Nota desde PHP', 'Esta es una nota desde PHP', 'Green')";
+$insert = mysqli_query($conexion, $sql);
+
+if($insert){
+    echo 'DATOS INSERTADOS CORRECTANENTE';
+}else{
+    echo 'Error: '.mysqli_error($conexion);
+}
+
