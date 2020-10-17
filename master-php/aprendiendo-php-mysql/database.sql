@@ -3,7 +3,7 @@ USE phpmysql;
 
 CREATE TABLE notas(
 id INT(255) AUTO_INCREMENT NOT NULL,
-titutlo VARCHAR(255),
+titulo VARCHAR(255),
 descripcion MEDIUMTEXT,
 color VARCHAR(255),
 CONSTRAINT pk_notas PRIMARY KEY(id)
