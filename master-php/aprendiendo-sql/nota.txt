@@ -1,0 +1,3 @@
+CREATE USER 'miguelajm'@'localhost' IDENTIFIED BY 'holamundo';
+GRANT ALL PRIVILEGES ON * . * TO 'miguelajm'@'localhost';
+REVOKE DROP ON * . * FROM ‘miguelajm’@‘localhost’;
