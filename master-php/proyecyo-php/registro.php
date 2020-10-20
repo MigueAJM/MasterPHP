@@ -18,8 +18,11 @@ NOTA:   OPERADORES TERNARIOS
         $horario_de_apertura = 8;
     }
 */
-session_start();
+
 if(isset($_POST)){
+    /*ES MAS RECOMENDABLE QUE SOLO SE CARGUEN LOS INCLUDES SI $_POST EXISTE */
+    require_once 'includes/conexion.php';
+    session_start();
     /*RECOLECCIÓN DE LA INFORMACIÓN DEL FORMULARIO*/
     //  condicional if
     if(isset($_POST['nombre'])){
@@ -67,9 +70,27 @@ if(isset($_POST)){
     $save_user = false;
     if(count($errores) == 0){
         //  INSERTAR USUARIO EN LA BASE DE DATOS EN LA TABLA DE USUARIOS
+        //CIFRAR LA CONTRASEÑA
+        /*
+        NOTA:  
+            PASSWORD_BCRYPT DE LOS MÁS RECOMENDABLES, MÁS SEGUROS
+            COST: NUMERO DE VECES QUE CIFRA LA CONTRASEÑA
+        */
+        $password_hash = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+        $sql = "INSERT INTO usuarios VALUES(NULL, '$name', '$apellidos', '$email', '$password_hash', CURDATE())";
+        $query = mysqli_query($db, $sql);
+
+        if($query){
+            $_SESSION['completado'] = 'El registro se ha completado con exito';
+        }else{
+            $_SESSION['errores']['general'] = 'Fallo al guardar el usuario';
+        }
         $save_user =  true;
+
+
     }else{
         $_SESSION['errores'] = $errores;
-        header('location: index.php');
     }
 }
+
+header('location: index.php');

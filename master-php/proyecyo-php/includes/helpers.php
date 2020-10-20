@@ -8,7 +8,16 @@ function showError($errores, $campo){
 }
 
 function removeError(){
-    $_SESSION['errores'] = null;
-    $remove = session_unset();
+    $remove = false;
+    if(isset($_SESSION['errores'])){
+        $_SESSION['errores'] = null;
+        unset($_SESSION['errores']);
+        $remove = true;
+    }
+    if(isset($_SESSION['completado'])){
+        $_SESSION['completado'] = null;
+        unset($_SESSION['completado']);
+        $remove = true;
+    }
     return $remove;
 }

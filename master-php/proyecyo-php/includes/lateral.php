@@ -16,6 +16,16 @@
 
     <div id="register" class="bloque">
         <h3>Registrate</h3>
+        <!--Mostrar errroes-->
+        <?php if(isset($_SESSION['completado'])): ?>
+            <did class="alerta alerta-exito">
+                <?=$_SESSION['completado']?>    
+            <div>
+        <?php elseif(isset($_SESSION['errores']['general'])): ?>
+            <did class="alerta alerta-exito">
+                <?=$_SESSION['errores']['general']?>    
+            <div>
+        <?php endif; ?>
         <form action="registro.php" method="POST">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre">
