@@ -18,6 +18,7 @@ NOTA:   OPERADORES TERNARIOS
         $horario_de_apertura = 8;
     }
 */
+session_start();
 if(isset($_POST)){
     /*RECOLECCIÓN DE LA INFORMACIÓN DEL FORMULARIO*/
     //  condicional if
@@ -68,6 +69,7 @@ if(isset($_POST)){
         //  INSERTAR USUARIO EN LA BASE DE DATOS EN LA TABLA DE USUARIOS
         $save_user =  true;
     }else{
-
+        $_SESSION['errores'] = $errores;
+        header('location: index.php');
     }
 }
