@@ -1,10 +1,11 @@
 <?php require_once './includes/cabecera.php' ?>       
 <?php include_once 'includes/lateral.php'?>
+
 <div id="principal">
     <!--CAJA PRINCIPAL-->
     <h1>Ultimas entradas</h1>
 
-    <article class="entada">
+    <article class="entrada">
         <a href="">
             <h2>Titulo de mi entradas</h2>
             <p>
@@ -15,7 +16,7 @@
             </p>
         </a>
     </article>
-    <article class="entada">
+    <article class="entrada">
         <a href="">
             <h2>Titulo de mi entradas</h2>
             <p>
@@ -26,7 +27,7 @@
             </p>
         </a>
     </article>
-    <article class="entada">
+    <article class="entrada">
         <a href="">
             <h2>Titulo de mi entradas</h2>
             <p>
@@ -37,7 +38,7 @@
             </p>
         </a>
     </article>
-    <article class="entada">
+    <article class="entrada">
         <a href="">
             <h2>Titulo de mi entradas</h2>
             <p>

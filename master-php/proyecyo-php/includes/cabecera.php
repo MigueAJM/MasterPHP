@@ -1,8 +1,8 @@
 <?php require_once 'conexion.php'?>
-<! DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="es">
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8" />
         <title>Blog de videojuegos</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     </head>
