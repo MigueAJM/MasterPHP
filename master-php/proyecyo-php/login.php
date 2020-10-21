@@ -4,6 +4,13 @@ require_once 'includes/conexion.php';
 
 // RECOGER DATOS DEL FORMULARIO
 if(isset($_POST)){
+
+    //borrar error antigua
+    if(isset($_SESSION['error_login'])){
+        unset($_SESSION['error_login']);
+    }
+
+    //recolectar datos
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
@@ -19,17 +26,13 @@ if(isset($_POST)){
         if($verify){
             // UTILIZAR UNA SESIÓN PARA GUARDAR LOS DATOS DEL USUARIO LOGUEADO
             $_SESSION['usuario'] = $usuario;
-
-            if(isset($_SESSION['error_login'])){
-                unset($_SESSION['error_login']);
-            }
         }else{
             // SI ALGO FALLA, ENVIAR UNA SESIÓN CON EL FALLO
-            $_SESSION['error_login'] = 'Login incorrecto';
+            $_SESSION['error_login'] = 'Login incorrecto!!';
         }
     }else{
         // mensaje de error
-        $_SESSION['error_login'] = 'Login incorrecto';
+        $_SESSION['error_login'] = 'Login incorrecto!!';
     }
 }
 header('Location:index.php');
