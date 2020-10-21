@@ -35,7 +35,7 @@ if(isset($_POST)){
     }
     //  operador ternario
     $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
-    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : false;
+    $email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;    // trim:  para almacenarlo sin espacios
     $password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : false;
     /* 
     NOTA:
@@ -83,7 +83,9 @@ if(isset($_POST)){
             PASSWORD_BCRYPT DE LOS MÁS RECOMENDABLES, MÁS SEGUROS
             COST: NUMERO DE VECES QUE CIFRA LA CONTRASEÑA
         */
+        // cifrar contraseña
         $password_hash = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+        
         $sql = "INSERT INTO usuarios VALUES(NULL, '$name', '$apellidos', '$email', '$password_hash', CURDATE())";
         $query = mysqli_query($db, $sql);
 
