@@ -24,11 +24,26 @@ function removeError(){
 
 function listCategory($conexion){
     $sql = "SELECT  * FROM categorias ORDER BY id ASC";
-    $category = mysqli_query($conexion, $sql);
+    $categorias = mysqli_query($conexion, $sql);
 
     $result = array();
-    if($category && mysqli_num_rows($category) >= 1){
-        $result = $category;
+    if($categorias && mysqli_num_rows($categorias) >= 1){
+        $result = $categorias;
+    }
+
+    return $result;
+}
+
+function getLastPost($conexion){
+    $sql = "SELECT e.*, c.* FROM entradas e ".
+            "INNER JOIN  categorias c ON e.categoria_id = c.id ".
+            "ORDER BY e.id DESC LIMIT 4";
+    $entradas = mysqli_query($conexion, $sql);
+
+    $result = array();
+
+    if($entradas && mysqli_num_rows($entradas) >= 1){
+        $result =  $entradas;
     }
 
     return $result;
