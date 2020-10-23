@@ -21,3 +21,15 @@ function removeError(){
     }
     return $remove;
 }
+
+function listCategory($conexion){
+    $sql = "SELECT  * FROM categorias ORDER BY id ASC";
+    $category = mysqli_query($conexion, $sql);
+
+    $result = array();
+    if($category && mysqli_num_rows($category) >= 1){
+        $result = $category;
+    }
+
+    return $result;
+}
