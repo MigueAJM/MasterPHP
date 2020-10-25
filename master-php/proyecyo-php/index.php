@@ -1,5 +1,7 @@
-<?php require_once './includes/cabecera.php' ?>       
-<?php include_once 'includes/lateral.php'?>
+<?php
+    require_once './includes/cabecera.php';       
+    include_once 'includes/lateral.php'; 
+?>
 
     <!--CAJA PRINCIPAL-->
 <div id="principal">
