@@ -13,6 +13,7 @@
                 <article class="entrada">
                     <a href="">
                         <h2><?=$entrada['titulo']?></h2>
+                        <span class="fecha"><?=$entrada['Categoria']. ' | '.$entrada['fecha']?></span>
                         <p><?=substr($entrada['descripcion'], 0,180).'...'?></p>
                     </a>
                 </article>

@@ -35,7 +35,7 @@ function listCategory($conexion){
 }
 
 function getLastPost($conexion){
-    $sql = "SELECT e.*, c.* FROM entradas e ".
+    $sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e ".
             "INNER JOIN  categorias c ON e.categoria_id = c.id ".
             "ORDER BY e.id DESC LIMIT 4";
     $entradas = mysqli_query($conexion, $sql);
