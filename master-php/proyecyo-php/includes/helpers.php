@@ -14,6 +14,13 @@ function removeError(){
         unset($_SESSION['errores']);
         $remove = true;
     }
+
+    if(isset($_SESSION['errores_entrada'])){
+        $_SESSION['errores_entrada'] = null;
+        unset($_SESSION['errores_entrada']);
+        $remove = true;
+    }
+
     if(isset($_SESSION['completado'])){
         $_SESSION['completado'] = null;
         unset($_SESSION['completado']);
