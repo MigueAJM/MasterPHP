@@ -11,19 +11,16 @@ function removeError(){
     $remove = false;
     if(isset($_SESSION['errores'])){
         $_SESSION['errores'] = null;
-        unset($_SESSION['errores']);
         $remove = true;
     }
 
     if(isset($_SESSION['errores_entrada'])){
         $_SESSION['errores_entrada'] = null;
-        unset($_SESSION['errores_entrada']);
         $remove = true;
     }
 
     if(isset($_SESSION['completado'])){
         $_SESSION['completado'] = null;
-        unset($_SESSION['completado']);
         $remove = true;
     }
     return $remove;
@@ -41,10 +38,14 @@ function listCategory($conexion){
     return $result;
 }
 
-function getLastPost($conexion){
+function getPost($conexion, $limit = null){
     $sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e ".
             "INNER JOIN  categorias c ON e.categoria_id = c.id ".
-            "ORDER BY e.id DESC LIMIT 4";
+            "ORDER BY e.id DESC ";
+    if($limit){
+        $sql .= 'LIMIT 4';
+    }
+    
     $entradas = mysqli_query($conexion, $sql);
 
     $result = array();
