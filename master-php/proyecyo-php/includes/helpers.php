@@ -50,6 +50,25 @@ function getCategory($conexion, $id){
     return $result;
 }
 
+function getOnePost($conexion, $id){
+    $sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e ".
+            "INNER JOIN categorias c ON e.categoria_id = c.id ".
+            "WHERE e.id = $id";
+    $entrada = mysqli_query($conexion, $sql);
+    /*
+        $error = mysqli_error($conexion);
+        var_dump($error);
+        die();
+    */
+    $result = array();
+
+    if($entrada && mysqli_num_rows($entrada) >= 1){
+        $result = mysqli_fetch_assoc($entrada);
+    }
+
+    return $result;
+}
+
 function getPost($conexion, $limit = null, $categoria = null){
     $sql = "SELECT e.*, c.nombre AS 'Categoria' FROM entradas e ".
             "INNER JOIN  categorias c ON e.categoria_id = c.id ";
@@ -59,7 +78,7 @@ function getPost($conexion, $limit = null, $categoria = null){
     }   
 
     $sql .= "ORDER BY e.id DESC ";
-    
+
     if($limit){
         $sql .= 'LIMIT 4';
     }
