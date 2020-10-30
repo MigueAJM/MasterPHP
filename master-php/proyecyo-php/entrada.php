@@ -16,10 +16,15 @@
     <a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">
         <h2><?=$entrada_actual['Categoria']?></h2>
     </a>
-    <h4><?=$entrada_actual['fecha']?></h4>
+    <h4><?=$entrada_actual['fecha']?> | <?=$entrada_actual['autor']?></h4>
     <p>
         <?=$entrada_actual['descripcion']?>
     </p>
+
+    <?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']):?>
+        <a href="editar-entrada.php" class="boton boton-verde">Editar entrada</a>
+        <a href="borrar-entrada.php" class="boton boton-rojo">Borrar entrada</a>
+    <?php endif;?>    
 </div> <!--fin principal-->
 			
 <?php require_once 'includes/footer.php'; ?>
