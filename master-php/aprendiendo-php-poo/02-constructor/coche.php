@@ -2,9 +2,18 @@
 class Coche{
 	
 	// Atributos o propiedades (variables)
+
+	// PUBLIC: Podemos acceder desde cualquier lugar, dentro de clase actual
+	//         dentro de clases que hereden esta clase o fuera de la clase
 	public $color;
-	public $marca;
-	public $modelo;
+	
+	// PROTECTED: Podemos accedes desde la clase que los define y desde clases
+	// que hereden esta clase
+	protected $marca;
+	
+	// PRIVATE: unicamente se puede acceder desde esta clase
+	private $modelo;
+	
 	public $velocidad;
 	public $caballaje;
 	public $plazas;
@@ -29,6 +38,14 @@ class Coche{
 	
 	public function setModelo($modelo){
 		$this->modelo = $modelo;
+	}
+	
+	public function getModelo(){
+		return $this->modelo;
+	}
+	
+	public function setMarca($marca){
+		$this->marca = $marca;
 	}
 	
 	public function acelerar(){
