@@ -63,11 +63,18 @@ class Main{
     public function setEntrada($entrada){
         $this->entrada = $entrada;
     }
+
+    function informacion(){
+        echo __CLASS__;
+        echo __METHOD__;
+        echo __FILE__;
+    }
 }
 //  Objeto principal
 
 //  Comprobar que metodos existen 
 $main =  new main();
+$main->informacion();
 //var_dump($main->usuario);
 $metodos = (get_class_methods($main));
 
