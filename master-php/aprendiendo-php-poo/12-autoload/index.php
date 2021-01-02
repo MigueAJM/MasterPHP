@@ -41,9 +41,50 @@ class Main{
         $this->entrada = new Entrada();
 
     }
-}
-$main =  new main();
-var_dump($main->usuario);
+    public function getUsuario(){
+        return $this->usuario;
+    }
+    
+    public function getCategoria(){
+        return $this->categoria;
+    }
 
+    public function getEntrada(){
+        return $thuis->entrada;
+    }
+    public function setUsuario($usuario){
+        $this->usuario = $usuario;
+    }
+    
+    public function setCategoria($categoria){
+        $this->categoria = $categoria;
+    }
+
+    public function setEntrada($entrada){
+        $this->entrada = $entrada;
+    }
+}
+//  Objeto principal
+
+//  Comprobar que metodos existen 
+$main =  new main();
+//var_dump($main->usuario);
+$metodos = (get_class_methods($main));
+
+$busqueda = array_search('setEntrada', $metodos);
+var_dump($busqueda);
+// Objeto otro paquete
 $usuario = new UsuarioAdmin();
 var_dump($usuario);
+
+//  Comprobar si existe una clase
+// al colocar una arroba no me mustra los warning
+
+//  $clase = @class_exists('MisClases\Usuario2');
+$clase = class_exists('MisClases\Usuario');
+
+if($clase){
+    echo '<h1>La clase si existe</h1>';
+}else{
+    echo '<h1>La clase No existe</h1>';
+}
