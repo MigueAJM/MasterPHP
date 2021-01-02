@@ -1,4 +1,6 @@
 <?php
+namespace MisClases;
+
 class Usuario{
     public $nombre;
     public $email;
