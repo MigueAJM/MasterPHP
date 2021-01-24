@@ -2,26 +2,45 @@
 require_once 'ModeloBase.php';
 
 class Nota extends ModeloBase{
-    public $nombre;
-    public $contenido;
+	public $usuario_id;
+	public $titulo;
+	public $descripcion;
+	
+	public function __construct() {
+		parent::__construct();
+	}
+	
+	
+	function getUsuario_id() {
+		return $this->usuario_id;
+	}
 
-    public function __construct(){
-        parent::__construct();
-    }
-    
-    function getNombre(){
-        return $this->nombre;
-    }
+	function getTitulo() {
+		return $this->titulo;
+	}
 
-    function getContenido(){
-        return $this->contenido;
-    }
+	function getDescripcion() {
+		return $this->descripcion;
+	}
 
-    function setNombre($nombre){
-        $this->nombre = $nombre;
-    }
+	function setUsuario_id($usuario_id) {
+		$this->usuario_id = $usuario_id;
+	}
 
-    function setContenido($contenido){
-        $this->contenido = $contenido;
-    }
+	function setTitulo($titulo) {
+		$this->titulo = $titulo;
+	}
+
+	function setDescripcion($descripcion) {
+		$this->descripcion = $descripcion;
+	}
+
+	public function guardar(){
+		$sql = "INSERT INTO notas(usuario_id, titulo, descripcion, fecha) VALUES ({$this->usuario_id}, '{$this->titulo}', '{$this->descripcion}', CURDATE());";
+	
+		$guardado = $this->db->query($sql);
+		
+		return $guardado;
+	}
+
 }
