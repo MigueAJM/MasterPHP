@@ -21,4 +21,5 @@ return array(
     'TCPDF_IMPORT' => $vendorDir . '/tecnickcom/tcpdf/tcpdf_import.php',
     'TCPDF_PARSER' => $vendorDir . '/tecnickcom/tcpdf/tcpdf_parser.php',
     'TCPDF_STATIC' => $vendorDir . '/tecnickcom/tcpdf/include/tcpdf_static.php',
+    'Zebra_Pagination' => $vendorDir . '/stefangabos/zebra_pagination/Zebra_Pagination.php',
 );
