@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ffe6d884d0e19ea0b5eaf62aa460b06821bb4c5e',
+    'reference' => 'f8ad25b1eebfcb857a95fd4554743b2afc01d89c',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ffe6d884d0e19ea0b5eaf62aa460b06821bb4c5e',
+      'reference' => 'f8ad25b1eebfcb857a95fd4554743b2afc01d89c',
+    ),
+    'masterexploder/phpthumb' => 
+    array (
+      'pretty_version' => '2.1',
+      'version' => '2.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '01f6aa65aa3d136e175f67da2b4ea3e316770d02',
     ),
     'spipu/html2pdf' => 
     array (

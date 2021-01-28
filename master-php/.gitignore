@@ -1,2 +1,6 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 .vscode/
+
+#Archivos de tipo imagen
+*.jpg
+*.png
