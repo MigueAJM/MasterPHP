@@ -1,6 +1,19 @@
 # Código gitignore para evitar procesar los directorios de las dependencias
 .vscode/
-
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vscode
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
+.phpunit.result.cache
 #Archivos de tipo imagen
 *.jpg
 *.png
