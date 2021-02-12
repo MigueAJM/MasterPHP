@@ -8,3 +8,7 @@
 ?>
 
 {{-- Esto es un comentario --}}
+
+<!--?= isset($director) ? $director : 'No hay director'; -->
+
+{{ $director or 'No hay ningun director' }}
