@@ -53,3 +53,7 @@ Route::get('/listado-peliculas', function(){
             ->with('titulo', $titulo)
             ->with('listado', $listado);
 });
+
+Route::get('/pagina-generica', function(){
+    return view('pagina');
+});
