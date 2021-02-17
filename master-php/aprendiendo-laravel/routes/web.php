@@ -15,8 +15,13 @@ Route::get('/', function () {
     //return view('welcome');
     echo "<h1>HOLA MUNDO!!</h1>";
 });
-Route:: get('/peliculas/{page?}', 'PeliculaController@index');
+Route::get('/peliculas/{page?}', 'PeliculaController@index');
+Route::get('/detalle', [
+    'uses' => 'PeliculaController@detalle',
+    'as' => 'detalle.pelicula'
+]);
 
+Route::resource('/usuario', 'UsuarioController');
 /*
  *  METODOS HTTP
  *  GET:    Conseguir datos
