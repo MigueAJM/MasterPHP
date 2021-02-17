@@ -15,6 +15,7 @@ Route::get('/', function () {
     //return view('welcome');
     echo "<h1>HOLA MUNDO!!</h1>";
 });
+Route:: get('/peliculas/{page?}', 'PeliculaController@index');
 
 /*
  *  METODOS HTTP
@@ -22,8 +23,8 @@ Route::get('/', function () {
  *  POST    Guardar datos
  *  PUT:    Actualizar recursos
  *  DELETE: Eliminar recursos
- * 
- */
+  
+ 
 
 Route::get('/mostrar-fecha', function (){
     $titulo = "Estoy mostrando la fecha";
@@ -47,7 +48,7 @@ Route::get('/listado-peliculas', function(){
 /*    return view('peliculas.listado', array(
         'titulo' => $titulo
     ));
- */
+ **c/
     $listado = array('Spiderman', 'DeadPool', 'Iron Man');
     return view('peliculas.listado')
             ->with('titulo', $titulo)
@@ -57,3 +58,4 @@ Route::get('/listado-peliculas', function(){
 Route::get('/pagina-generica', function(){
     return view('pagina');
 });
+*/
