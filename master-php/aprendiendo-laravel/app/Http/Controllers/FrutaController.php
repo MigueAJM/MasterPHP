@@ -12,7 +12,7 @@ class FrutaController extends Controller
         ->orderBy('id', 'desc')
         ->get();
 
-        return view('frutas.index', [
+        return view('fruta.index', [
             'frutas' => $frutas
         ]);
     }
@@ -21,8 +21,23 @@ class FrutaController extends Controller
         ->where('id', '=', $id)
         ->first();
 
-        return view('frutas.detail',[
+        return view('fruta.detail',[
             'fruta' => $fruta
         ]);
+    }
+    public function create(){
+        return view('fruta.create');
+    }
+
+    public function save(Request $request){
+        //guardar registro
+        $fruta = DB::table('frutas')->insert(array(
+            'nombre' => $request->input('name'),
+            'descripcion' => $request->input('description'),
+            'precio' => $request->input('price'),
+            'fecha' => date('Y-m-d')
+        ));
+
+        return redirect()->action('FrutaController@index');
     }
 }

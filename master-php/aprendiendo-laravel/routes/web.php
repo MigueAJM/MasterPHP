@@ -27,6 +27,8 @@ Route::resource('/usuario', 'UsuarioController');
 Route::group(['prefix'=>'frutas'], function(){
     Route::get('index', 'FrutaController@index');
     Route::get('detail/{id}', 'FrutaController@detail');
+    Route::get('crear', 'FrutaController@create');
+    Route::post('save', 'FrutaController@save');
 });
 /*
  *  METODOS HTTP
