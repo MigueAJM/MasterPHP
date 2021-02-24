@@ -16,6 +16,7 @@ class FrutaController extends Controller
             'frutas' => $frutas
         ]);
     }
+
     public function detail($id){
         $fruta = DB::table('frutas')
         ->where('id', '=', $id)
@@ -25,19 +26,32 @@ class FrutaController extends Controller
             'fruta' => $fruta
         ]);
     }
+
     public function create(){
         return view('fruta.create');
     }
 
     public function save(Request $request){
         //guardar registro
-        $fruta = DB::table('frutas')->insert(array(
+        $fruta = DB::table('frutas')
+        ->insert(array(
             'nombre' => $request->input('name'),
             'descripcion' => $request->input('description'),
             'precio' => $request->input('price'),
             'fecha' => date('Y-m-d')
         ));
 
-        return redirect()->action('FrutaController@index');
+        return redirect()
+        ->action('FrutaController@index')
+        ->with('status', 'Fruta Insertada');
+    }
+
+    public function delete($id){
+        $fruta = DB::table('frutas')
+        ->where('id', $id)
+        ->delete();
+        return redirect()
+        ->action('FrutaController@index')
+        ->with('status', 'Fruta eliminada');
     }
 }
