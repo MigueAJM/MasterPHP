@@ -22,6 +22,11 @@ Route::get('/detalle', [
 ]);
 
 Route::resource('/usuario', 'UsuarioController');
+
+
+Route::group(['prefix'=>'frutas'], function(){
+    Route::get('index', 'FrutaController@index');
+});
 /*
  *  METODOS HTTP
  *  GET:    Conseguir datos
